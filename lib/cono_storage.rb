@@ -11,6 +11,7 @@ require "cono_storage/request_methods"
 module ConoStorage
 
   class << self
+    # Alias for ConoStorage::Client.new
     def new(params)
       Client.new(params)
     end

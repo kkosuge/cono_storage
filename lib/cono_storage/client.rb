@@ -12,6 +12,12 @@ module ConoStorage
       "Content-Type" => "application/json"
     }
 
+    # @param auth_url [String] default: https://ident-r1nd1001.cnode.jp/v2.0
+    # @param web_mode [Boolean] true でコンテナやオブジェクトを作成/更新すると公開状態になります。
+    # @param tenant_id [String]
+    # @param username [String]
+    # @param password [String]
+    # @param endpoint [String]
     def initialize(auth_url: 'https://ident-r1nd1001.cnode.jp/v2.0',
                    web_mode: false,
                    tenant_id: , username: , password: , endpoint: )
