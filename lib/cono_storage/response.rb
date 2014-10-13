@@ -28,10 +28,10 @@ module ConoStorage
       if @body and @body.size > 0
         JSON.parse(@body)
       else
-        body
+        @body
       end
     rescue JSON::ParserError
-      body
+      @body
     end
 
     # Conostorage::Response#headers
