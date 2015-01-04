@@ -6,7 +6,7 @@ module ConoStorage
       @body    = faraday_response.body
       @headers = faraday_response.headers
       @status  = faraday_response.status
-      @url     = faraday_response.env.url.to_s
+      @url     = faraday_response.env[:url].to_s
       @faraday_response = faraday_response
     end
 
