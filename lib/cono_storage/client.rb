@@ -38,7 +38,7 @@ module ConoStorage
     end
 
     def upload(path, file, params, headers)
-      unless file.is_a? File
+      if file.is_a?(String)
         file = File.open(file)
       end
 
