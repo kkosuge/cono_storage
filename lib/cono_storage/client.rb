@@ -26,7 +26,7 @@ module ConoStorage
       @tenant_id = tenant_id
       @username  = username
       @password  = password
-      @endpoint  = endpoint.scan(/\A(http.+\/v1)/).first.first
+      @endpoint  = endpoint
     end
 
     %w( get head put delete post ).each do |method|
