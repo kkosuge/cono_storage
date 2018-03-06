@@ -10,6 +10,8 @@ OpenStack Swift Client for ConoHa オブジェクトストレージ
 require 'cono_storage'
 
 client = ConoStorage.new(
+  # via. https://identity.tyo1.conoha.io/
+  auth_url:  'https://identity.tyo1.conoha.io/v2.0/',
   tenant_id: 'b7daff9xxxxxxxxxxxxxxxxx',
   username: 1111111,
   password: '^passw0rd$',
@@ -18,8 +20,8 @@ client = ConoStorage.new(
 )
 
 client.put_container('awsome_gifs')# => ConoStorage::Response
-client.put_object('awsome_gifs','nyan.gif').url #=> "https://objectstore-...cnode.jp/.../awsome_gifs/nyan.gif"
-client.put_object('awsome_gifs', 'wan.gif', hearders: { 'X-Delete-At' => "1170774000" } ) # Custom Headers
+client.put_object('awsome_gifs', 'nyan.gif', '/local/path/to/nyan.gif').url #=> "https://objectstore-...cnode.jp/.../awsome_gifs/nyan.gif"
+client.put_object('awsome_gifs', 'wan.gif', '/local/path/to/wan.gif', headers: { 'X-Delete-At' => "1170774000" } ) # Custom Headers
 client.get_object('awsome_gifs', 'nyan.gif')
 client.delete_object('awsome_gifs', 'nyan.gif')
 client.delete_container('awsome_gifs').status #=> 204
@@ -27,7 +29,7 @@ client.delete_container('awsome_gifs').status #=> 204
 
 ## Documentation
 
-- [オブジェクトストレージ APIリファレンス - ConoHa](https://www.conoha.jp/guide/guide.php?g=52)
+- [オブジェクトストレージ APIリファレンス - ConoHa](https://www.conoha.jp/docs/)
 
 ## Requirements
 
